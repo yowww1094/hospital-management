@@ -1,4 +1,5 @@
-import mongoose from "mongoose";
+import mongoose, { Schema } from "mongoose";
+import Hospital from "./Hospital";
 
 const doctorSchema = mongoose.Schema({
     name: {
@@ -20,10 +21,17 @@ const doctorSchema = mongoose.Schema({
         type: String,
         required: true,
     },
+    hospital: {
+        type: Schema.Types.ObjectId,
+        ref: 'Hospital'
+    },
     appointements: [{
         type: Schema.Types.ObjectId,
         ref: 'Appointement'
     }]
+},
+{
+    timestamps: true
 });
 
 const Doctor = mongoose.model("Doctor", doctorSchema);

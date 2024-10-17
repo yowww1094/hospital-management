@@ -19,7 +19,10 @@ const hospitalSchema = mongoose.Schema({
     phone2: {
         type:String,
         trim:true, 
-        required:true,
+    },
+    email: {
+        type:String,
+        trim:true,
     },
     rc: {
         type:String,
