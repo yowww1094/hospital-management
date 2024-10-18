@@ -6,6 +6,7 @@ import bodyParser from 'body-parser';
 import dbConnection from './config/dbConnection.js'; 
 
 import hospitalRoutes from './routes/hospitalRoutes.js';
+import doctorRoutes from './routes/doctorRoutes.js';
 
 const PORT = process.env.PORT || 8080
 const app = express();
@@ -23,5 +24,6 @@ app.get('/', (req, res) => {
 });
 
 app.use('/hospital', hospitalRoutes);
+app.use('/doctor', doctorRoutes);
 
 app.listen(PORT, ()=> console.log(`Server listening on port ${PORT}`))
