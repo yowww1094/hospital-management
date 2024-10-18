@@ -7,6 +7,8 @@ import dbConnection from './config/dbConnection.js';
 
 import hospitalRoutes from './routes/hospitalRoutes.js';
 import doctorRoutes from './routes/doctorRoutes.js';
+import patientRoutes from './routes/PatientRoutes.js';
+import appointementTypesRoutes from './routes/appointementTypesRoutes.js';
 
 const PORT = process.env.PORT || 8080
 const app = express();
@@ -25,5 +27,7 @@ app.get('/', (req, res) => {
 
 app.use('/hospital', hospitalRoutes);
 app.use('/doctor', doctorRoutes);
+app.use('/patient', patientRoutes);
+app.use('/appointement-types', appointementTypesRoutes);
 
 app.listen(PORT, ()=> console.log(`Server listening on port ${PORT}`))

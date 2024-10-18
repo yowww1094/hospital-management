@@ -72,7 +72,7 @@ const updatePatient = async (req, res) => {
         const { id } = req.query;
         const { name, gender, age, description, idCard, phone, email } = req.body;
 
-        const updatedPatient = await Patient.findByIdAndUpdate(id, {name, gender, age, description, idCard, phone, email});
+        const updatedPatient = await Patient.findByIdAndUpdate(id, {name, gender, age, description, idCard, phone, email}, {new: true});
         if (!updatedPatient) {
             return res.json({
                 status: 400,

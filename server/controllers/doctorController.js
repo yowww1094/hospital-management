@@ -91,7 +91,7 @@ const updateDoctor = async (req, res) => {
             });
         }
 
-        const updatedDoctor = await Doctor.findByIdAndUpdate(id, {name, username, password})
+        const updatedDoctor = await Doctor.findByIdAndUpdate(id, {name, username, password}, {new: true})
         if (!updatedDoctor) {
             return res.json({
                 status: 400,
