@@ -23,12 +23,17 @@ const doctorSchema = mongoose.Schema({
     },
     hospital: {
         type: Schema.Types.ObjectId,
-        ref: 'Hospital'
+        ref: 'Hospital',
+        required: true
     },
     appointements: [{
         type: Schema.Types.ObjectId,
         ref: 'Appointement'
-    }]
+    }],
+    isActive: {
+        type: Number,
+        default: 1
+    }
 },
 {
     timestamps: true
