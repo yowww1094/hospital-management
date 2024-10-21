@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get('/', getAllAppointmentTypes);
 router.post('/', createAppointementType);
-router.put('/', updateAppointementType);
-router.delete('/', deleteAppointementType);
+router.put('/:id', updateAppointementType);
+router.delete('/:id', deleteAppointementType);
 
 export default router;

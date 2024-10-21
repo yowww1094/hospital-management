@@ -5,6 +5,6 @@ const router = express.Router();
 
 router.get('/', getHospital);
 router.post('/', createHospital);
-router.put('/', updateHospital);
+router.put('/:id', updateHospital);
 
 export default router;
