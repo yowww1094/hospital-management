@@ -1,4 +1,4 @@
-import Patient from "../models/Patient";
+import Patient from "../models/Patient.js";
 
 const getAllPatients = async (req, res) => {
     try {
@@ -92,7 +92,7 @@ const updatePatient = async (req, res) => {
     }
 };
 
-export default {
+export {
     getAllPatients,
     getOnePatient,
     createPatient,

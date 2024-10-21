@@ -26,7 +26,7 @@ const getOneInvoice = async (req, res) => {
     try {
         const { id } = req.query;
         const invoice = await Invoice.find({id});
-        if (!invoice) {
+        if (invoice) {
             return res.json({
                 status: 400,
                 mesaage: "No Invoice Found!"
@@ -117,7 +117,7 @@ const deleteInvoice = async (req, res) => {
     }
 };
 
-export default {
+export {
     getAllInvoices,
     getOneInvoice,
     createInvoice,

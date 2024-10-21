@@ -1,4 +1,4 @@
-import Doctor from "../models/Doctor";
+import Doctor from "../models/Doctor.js";
 
 const getAllDoctors = async (req, res) => {
     try {
@@ -137,7 +137,7 @@ const deactivateDoctor = async (req,res) => {
     }
 };
 
-export default {
+export {
     getAllDoctors,
     getOneDoctor,
     createDoctor,

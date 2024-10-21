@@ -95,7 +95,7 @@ const deleteAppointementType = async (req, res) => {
     }
 };
 
-export default {
+export {
     getAllAppointmentTypes,
     createAppointementType,
     updateAppointementType,

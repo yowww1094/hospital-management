@@ -1,4 +1,4 @@
-import Appointement from "../models/Appointement";
+import Appointement from "../models/Appointement.js";
 
 const getAllAppointements = async (req, res) => {
     try {
@@ -116,7 +116,7 @@ const deleteAppointement = async (req, res) => {
     }
 };
 
-export default {
+export {
     getAllAppointements,
     getOneAppointement,
     createAppointement,

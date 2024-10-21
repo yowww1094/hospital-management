@@ -1,4 +1,4 @@
-import Hospital from "../models/Hospital";
+import Hospital from "../models/Hospital.js";
 
 const getHospital = async (req, res) => {
     try {
@@ -72,7 +72,7 @@ const updateHospital = async (req, res) => {
     }
 };
 
-export default {
+export {
     getHospital, 
     createHospital,
     updateHospital

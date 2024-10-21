@@ -116,7 +116,7 @@ const deletePayement = async (req, res) => {
     }
 };
 
-export default {
+export {
     getAllPayements,
     getOnePayement,
     createPayement,

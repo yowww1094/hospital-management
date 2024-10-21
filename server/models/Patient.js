@@ -28,7 +28,7 @@ const patientSchema = mongoose.Schema({
         type: String,
     },
     appointements: [{
-        ype: Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'Appointement'
     }],
     invoices: [{
