@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
@@ -9,6 +10,8 @@ import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 
 
 import { BsFilePerson } from "react-icons/bs";
+import { FaRegEye } from "react-icons/fa";
+
 
 const CARD_ITEMS = [
   {
@@ -61,14 +64,14 @@ function Home() {
 
   return (
     <div className='flex flex-col gap-3 mx-5 my-5'>
-      <div className='flex flex-row gap-4 w-full items-center justify-center'>
+      <div className='grid grid-cols-2 md:grid-cols-4 gap-4 w-full items-center justify-center'>
         {
           CARD_ITEMS.map(item => (
             <Card key={item} item={item} />
           ))
         }
       </div>
-      <div className='flex flex-row '>
+      {/* <div className='flex flex-row '>
         <div className='w-[60%]'>
           <FullCalendar
             height={600}
@@ -93,12 +96,43 @@ function Home() {
                 fill="#8884d8"
                 dataKey="value"
               >
-                {/* {data.map((index) => (
+                {data.map((index) => (
                   <Cell key={`cell-${index}`} fill={PIE_CHART_COLORS[index % PIE_CHART_COLORS.length]} />
-                ))} */}
+                ))}
               </Pie>
             </PieChart>
           </ResponsiveContainer>
+        </div>
+      </div> */}
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="bg-white border border-gray-100 shadow-md shadow-black/10 p-6">
+          <div className="flex justify-between items-center mb-4">
+            <div className="font-medium">Todays Patients</div>
+            <Link className="font-light text-[11px] text-blue-500 hover:text-blue-700 hover:underline" to='/patients'>View More</Link>
+          </div>
+          <div className="overflow-x-auto">
+            <table className='w-full min-w-[540px]'>
+              <thead>
+                <tr>
+                  <th className='text-[12px] uppercase tracking-wide text-gray-400 px-4 py-2 text-left bg-gray-50 rounded-tl-md rounded-bl-md'>Date</th>
+                  <th className='text-[12px] uppercase tracking-wide text-gray-400 px-4 py-2 text-left bg-gray-50'>Patient</th>
+                  <th className='text-[12px] uppercase tracking-wide text-gray-400 px-4 py-2 text-left bg-gray-50'>Appiontement Type</th>
+                  <th className='text-[12px] uppercase tracking-wide text-gray-400 px-4 py-2 text-left bg-gray-50 rounded-tr-md rounded-br-md'>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className='py-2 px-4'><span className='text-[13px] font-medium text-gray-400'>25/12/2024 10:00</span></td>
+                  <td className='py-2 px-4'><span className='text-[13px] font-medium text-gray-400'>Younes</span></td>
+                  <td className='py-2 px-4'><span className='text-[13px] font-medium text-gray-400'>Nettoyage</span></td>
+                  <td className='py-2 px-4 flex items-center'>
+                    <button className='items-center justify-center inline-block p-1 rounded bg-emerald-500/10 text-emerald-500 font-semibold text-[16px]'><FaRegEye /></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
